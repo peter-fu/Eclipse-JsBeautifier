@@ -102,7 +102,7 @@ if (!Object.values) {
     };
 }
 
-(function() {
+
 
     function js_beautify(js_source_text, options) {
 
@@ -2330,4 +2330,3 @@ if (!Object.values) {
         global.js_beautify = js_beautify;
     }
 
-}());
