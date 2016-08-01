@@ -75,7 +75,7 @@ public class NewAction implements IObjectActionDelegate, IEditorActionDelegate {
 			fileData.append("\r\n\r\n");
 			text = doc.get();
 			text = text.replace("\\", "\\\\").replace("\"", "\\\"").replace("\'", "\\\'").replace("\n", "\\n").replace("\r", "\\r");
-			fileData.append("js_beautify('"+text+"', { 'max_preserve_newlines': 5, 'wrap_line_length': 180, 'end_with_newline': true, 'eol': '\n' });");
+			fileData.append("js_beautify('"+text+"', { 'max_preserve_newlines': 5, 'wrap_line_length': 180, 'end_with_newline': true, 'eol': '\\n', 'operator_position': 'after-newline' });");
 
 			String beautifiedString = (String)engine.eval(fileData.toString());
 			doc.set(beautifiedString);
