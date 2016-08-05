@@ -20,7 +20,6 @@ import org.eclipse.ui.IEditorActionDelegate;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.editors.text.TextEditor;
 import org.eclipse.ui.texteditor.AbstractTextEditor;
 import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.vjet.eclipse.internal.ui.editor.JavaScriptEditor;
@@ -75,7 +74,7 @@ public class NewAction implements IObjectActionDelegate, IEditorActionDelegate {
 			fileData.append("\r\n\r\n");
 			text = doc.get();
 			text = text.replace("\\", "\\\\").replace("\"", "\\\"").replace("\'", "\\\'").replace("\n", "\\n").replace("\r", "\\r");
-			fileData.append("js_beautify('"+text+"', { 'max_preserve_newlines': 5, 'wrap_line_length': 180, 'end_with_newline': true, 'eol': '\\n', 'operator_position': 'after-newline' });");
+			fileData.append("js_beautify('"+text+"', { 'max_preserve_newlines': 5, 'wrap_line_length': 180, 'end_with_newline': true, 'eol': '\\n' });");
 
 			String beautifiedString = (String)engine.eval(fileData.toString());
 			doc.set(beautifiedString);
